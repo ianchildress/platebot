@@ -78,12 +78,10 @@ func (a *TwilioAlerter) Alert(msg string) error {
 		return err
 	}
 
-	fmt.Println(string(b))
-
 	if resp.StatusCode >= 200 && resp.StatusCode < 300 {
 		a.lastMsg = time.Now()
 		return nil
 	}
 
-	return errors.New("failed to send message")
+	return fmt.Errorf("failed to send message: %s", string(b))
 }
