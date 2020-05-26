@@ -30,6 +30,9 @@ func (t *simple) Get(url string) (io.ReadCloser, error) {
 		time.Sleep(t.duration - time.Since(t.lastRequest))
 	}
 	resp, err := http.Get(url)
+	if err != nil {
+		return nil, err
+	}
 	t.lastRequest = time.Now()
 	//fmt.Println(time.Since(start), url)
 	return resp.Body, err
