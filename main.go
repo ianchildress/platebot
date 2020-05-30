@@ -7,9 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/ianchildress/platebot/throttle"
-
 	"github.com/ianchildress/platebot/alert"
+	"github.com/ianchildress/platebot/throttle"
 )
 
 const (

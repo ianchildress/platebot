@@ -9,10 +9,12 @@ type Product struct {
 
 const (
 	// plate urls
-	steelPlateURL    = "https://www.roguefitness.com/rogue-calibrated-lb-steel-plates"
-	machinedPlateURL = "https://www.roguefitness.com/rogue-machined-olympic-plates"
-	olympicPlateURL  = "https://www.roguefitness.com/rogue-olympic-plates"
-	echoPlateURL     = "https://www.roguefitness.com/rogue-echo-bumper-plates-with-white-text"
+	steelPlateURL             = "https://www.roguefitness.com/rogue-calibrated-lb-steel-plates"
+	machinedPlateURL          = "https://www.roguefitness.com/rogue-machined-olympic-plates"
+	olympicPlateURL           = "https://www.roguefitness.com/rogue-olympic-plates"
+	echoPlateURL              = "https://www.roguefitness.com/rogue-echo-bumper-plates-with-white-text"
+	calibratedKgSteelPlateURL = "https://www.roguefitness.com/rogue-calibrated-kg-steel-plates"
+	lbChangePlatesURL         = "https://www.roguefitness.com/rogue-lb-change-plates"
 )
 
 // plate products have multiple products per page so we will want to only perform a single request per url
@@ -22,7 +24,7 @@ var plateProducts = []Product{
 		URL:    steelPlateURL,
 		Name:   "2.5LB Calibrated LB Steel Plate - Pair",
 		Number: "38875",
-		Track:  false,
+		Track:  true,
 	},
 	{
 		URL:    steelPlateURL,
@@ -59,7 +61,7 @@ var plateProducts = []Product{
 		URL:    machinedPlateURL,
 		Name:   "2.5LB Machined Olympic - Pair",
 		Number: "47205",
-		Track:  false,
+		Track:  true,
 	},
 	{
 		URL:    machinedPlateURL,
@@ -96,7 +98,7 @@ var plateProducts = []Product{
 		URL:    olympicPlateURL,
 		Name:   "2.5LB Olympic Plate - Pair",
 		Number: "7185",
-		Track:  false,
+		Track:  true,
 	},
 	{
 		URL:    olympicPlateURL,
@@ -157,6 +159,92 @@ var plateProducts = []Product{
 		URL:    echoPlateURL,
 		Name:   "45LB Echo Bumper Plate - Pair",
 		Number: "65864",
+		Track:  true,
+	},
+	// rogue-calibrated-kg-steel-plates
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "0.25KG Calibrated Plate - Pair",
+		Number: "32811",
+		Track:  false,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "0.5KG Calibrated Plate - Pair",
+		Number: "32813",
+		Track:  false,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "1.25KG Calibrated Plate - Pair",
+		Number: "32815",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "2.5KG Calibrated Plate - Pair",
+		Number: "32817",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "5KG Calibrated Plate - Pair",
+		Number: "32819",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "10KG Calibrated Plate - Pair",
+		Number: "32821",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "15KG Calibrated Plate - Pair",
+		Number: "32823",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "20KG Calibrated Plate - Pair",
+		Number: "32825",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "25KG Calibrated Plate - Pair",
+		Number: "32827",
+		Track:  true,
+	},
+	{
+		URL:    calibratedKgSteelPlateURL,
+		Name:   "50KG Calibrated Plate - Pair",
+		Number: "48013",
+		Track:  true,
+	},
+	// Rogue LB Change Plates
+	{
+		URL:    lbChangePlatesURL,
+		Name:   "1.25LB Change Plate Pair",
+		Number: "32337",
+		Track:  true,
+	},
+	{
+		URL:    lbChangePlatesURL,
+		Name:   "2.5LB Change Plate Pair",
+		Number: "24533",
+		Track:  true,
+	},
+	{
+		URL:    lbChangePlatesURL,
+		Name:   "5.0LB Change Plate Pair",
+		Number: "24534",
+		Track:  true,
+	},
+	{
+		URL:    lbChangePlatesURL,
+		Name:   "10.0LB Change Plate Pair",
+		Number: "24535",
 		Track:  true,
 	},
 }
@@ -240,6 +328,17 @@ var barProducts = []Product{
 	{
 		URL:   "https://www.roguefitness.com/stainless-steel-ohio-bar",
 		Name:  "The Ohio Bar - Stainless Steel",
+		Track: false,
+	},
+	// not a bar but should still work
+	{
+		URL:   "https://www.roguecanada.ca/saml-24-monster-lite-spotter-arms-pair",
+		Name:  "SAML-24 Monster Lite Safety Spotter Arms (Pair) -=CANADA=-",
+		Track: false,
+	},
+	{
+		URL:   "https://www.roguefitness.com/saml-24-monster-lite-spotter-arms-pair",
+		Name:  "SAML-24 Monster Lite Safety Spotter Arms (Pair)",
 		Track: false,
 	},
 }

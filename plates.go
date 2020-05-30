@@ -53,7 +53,7 @@ func checkPlates(plates []Product, throttler throttle.Throttler) []Product {
 
 			tag := fmt.Sprintf("grouped-product-item-%s", p.Number)
 			if bytes.Contains(b, []byte(tag)) {
-				color.Green("%v %s", p.Name, p.URL)
+				color.Green("%v %s?=%s", p.Name, p.URL, random())
 				products = append(products, p)
 			}
 		}

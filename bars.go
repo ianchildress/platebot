@@ -5,9 +5,10 @@ import (
 	"io"
 	"strings"
 
+	"github.com/fatih/color"
+
 	"github.com/ianchildress/platebot/throttle"
 
-	"github.com/fatih/color"
 	"golang.org/x/net/html"
 )
 
@@ -25,7 +26,7 @@ func checkBars(bars []Product, throttler throttle.Throttler) []Product {
 		}
 
 		if checkAddToCart(r) {
-			color.Green("Found %s %s", bars[i].Name, bars[i].URL)
+			color.Green("%s %s?=%s\n", bars[i].Name, bars[i].URL, random())
 			products = append(products, Product{
 				URL:  bars[i].URL,
 				Name: bars[i].Name,
